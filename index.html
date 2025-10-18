@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slô • Creative Tech Portfolio</title>
+    <meta name="description"
+        content="Slô imagine des expériences numériques mêlant code, art, son et lumière. Développeur polyglotte, ingénieur son & lumière, DJ et pentesteur débutant.">
+    <link rel="icon" type="image/png"
+        href="https://cdn.discordapp.com/avatars/1428474325937422390/e5de821ba9a5e7ba73988369db2fe74f.png?size=1024">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <meta property="og:title" content="Slô • Creative Tech Portfolio">
+    <meta property="og:description"
+        content="Creative technologist nourri par le code, le design, le son et la lumière.">
+    <meta property="og:image"
+        content="https://cdn.discordapp.com/avatars/1428474325937422390/e5de821ba9a5e7ba73988369db2fe74f.png?size=1024">
+    <meta property="og:url" content="#accueil">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Slô • Creative Tech Portfolio">
+    <meta name="twitter:description" content="Slô transforme des idées brutes en expériences numériques sensibles.">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <canvas id="nebula-bg" aria-hidden="true"></canvas>
+    <header id="accueil" class="site-header">
+        <div class="container">
+            <div class="nav-bar">
+                <a href="#accueil" class="brand" aria-label="Accueil Slô">Slô</a>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+                    <span class="nav-toggle-box">
+                        <span class="nav-toggle-line"></span>
+                        <span class="nav-toggle-line"></span>
+                        <span class="nav-toggle-line"></span>
+                    </span>
+                    <span class="sr-only">Ouvrir le menu</span>
+                </button>
+                <nav class="nav-links" id="primary-nav" aria-label="Navigation principale">
+                    <a href="#apropos">À propos</a>
+                    <a href="#expertises">Expertises</a>
+                    <a href="#expeditions">Expéditions</a>
+                    <a href="#parcours">Parcours</a>
+                    <a href="#projets">Projets</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+                    <span class="theme-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Basculer le thème</span>
+                </button>
+            </div>
+            <div class="hero-layout">
+                <div class="hero-copy">
+                    <p class="hero-tag">Creative Tech Alchemist</p>
+                    <h1>Salut, moi c'est <span>Slô</span>.</h1>
+                    <p class="hero-body">Je transforme des idées brutes en espaces numériques sensibles où l'audace
+                        rencontre la simplicité. Je code, je mixe, je conçois des ambiances son & lumière et j'explore
+                        la sécurité applicative en mode pentest (débutant).</p>
+                    <ul class="hero-highlights">
+                        <li>Dev polyglotte : JavaScript/TypeScript, Python, Go, Ruby et un peu de Rust</li>
+                        <li>Ingénieur son & lumière — installations live et tournées</li>
+                        <li>DJ : sets hybrides (électronique / ambient / breaks)</li>
+                        <li>Pentesting (débutant) — labs, audits rapides et bug hunting</li>
+                    </ul>
+                    <div class="hero-actions">
+                        <a class="button primary" href="#contact">Lancer un projet</a>
+                        <a class="button ghost" href="#expeditions">Découvrir mes expéditions</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <figure class="portrait-card">
+                        <img src="https://cdn.discordapp.com/avatars/1428474325937422390/e5de821ba9a5e7ba73988369db2fe74f.png?size=1024"
+                            alt="Portrait stylisé de Slô">
+                        <figcaption>Dev • Ingé son & lumière • DJ • Pentesteur débutant</figcaption>
+                    </figure>
+                    <div class="hero-details">
+                        <div class="detail-card">
+                            <span class="detail-label">En ce moment</span>
+                            <p>Je pilote un laboratoire sonore qui cartographie les émotions dans l'espace — et je monte
+                                un petit pentest lab pour m'entraîner.</p>
+                        </div>
+                        <div class="detail-card">
+                            <span class="detail-label">Collaborations rêvées</span>
+                            <p>Studios, collectifs musicaux, équipes produit sensibilisées à la sécurité et festivals
+                                tech
+                                / musique.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="apropos" class="section section--contrast">
+            <div class="container split">
+                <div>
+                    <h2 class="section-title">À propos</h2>
+                    <p>Slô est un créatif-tech multi-casquettes : développeur polyglotte, ingénieur son & lumière et DJ.
+                        J'aime fabriquer des prototypes techniques qui racontent des histoires et concevoir des
+                        environnements live où le son et la lumière dialoguent avec le public.</p>
+                    <p>Je défends une tech sensible, inclusive et durable — chaque projet commence par écouter les
+                        usages, puis j'assemble les briques techniques qui servent le récit et les contraintes.
+                    </p>
+                    <div class="pill-group" aria-label="Domaines explorés">
+                        <span class="pill">Creative coding</span>
+                        <span class="pill">Narration sonore</span>
+                        <span class="pill">Son & lumière</span>
+                        <span class="pill">Pentesting (labs)</span>
+                    </div>
+                </div>
+                <aside class="insights-card">
+                    <h3>Ce qui me fait vibrer</h3>
+                    <ul>
+                        <li>Révéler des identités de marque faussement calmes mais profondément vibrantes.</li>
+                        <li>Concevoir des rigs sonores et des ambiances lumineuses pour la scène et l'installation.</li>
+                        <li>La chasse au bug : petits audits, CTFs et apprentissage continu en sécurité applicative.
+                        </li>
+                    </ul>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-label">projets hybrides livrés</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">workshops animés</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">podcasts produits</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+        <section id="expertises" class="section">
+            <div class="container">
+                <h2 class="section-title">Expertises</h2>
+                <p class="section-intro">Je mélange recherche, design, son et technologie pour fabriquer des
+                    expériences qui respirent la sincérité. Voici comment j'aime contribuer.</p>
+                <div class="cards-grid">
+                    <article class="skill-card">
+                        <header>
+                            <h3>Lab créatif & prototypes</h3>
+                            <span class="skill-sub">Idéation à démo fonctionnelle</span>
+                        </header>
+                        <p>Prototypes vivants (web, audio, interactions physiques) prêts à être testés en conditions
+                            réelles.</p>
+                        <ul class="bullet-list">
+                            <li>Sprints Figma + SvelteKit / Next.js pour valider en une semaine.</li>
+                            <li>Micro-interactions, visualisers WebGL et pipelines audio temps réel.</li>
+                            <li>Intégration API & automation pour accélérer le delivery.</li>
+                        </ul>
+                        <div class="chip-row">
+                            <span>TypeScript</span>
+                            <span>Python</span>
+                            <span>Go</span>
+                        </div>
+                        <div class="meter" data-progress="92"></div>
+                    </article>
+                    <article class="skill-card">
+                        <header>
+                            <h3>Son & lumière</h3>
+                            <span class="skill-sub">Scénographie live & installations</span>
+                        </header>
+                        <p>Conception de rigs sonores, mapping lumière et contrôle temps réel pour concerts, clubs et
+                            installations.</p>
+                        <ul class="bullet-list">
+                            <li>Programmation consoles, routing audio, backline & monitoring.</li>
+                            <li>Contrôle DMX, mapping et interactions basées sur capteurs.</li>
+                            <li>Sound design pour installations et sets DJ.</li>
+                        </ul>
+                        <div class="chip-row">
+                            <span>Max/MSP</span>
+                            <span>TouchDesigner</span>
+                            <span>Q-Sys / DMX</span>
+                        </div>
+                        <div class="meter" data-progress="88"></div>
+                    </article>
+                    <article class="skill-card">
+                        <header>
+                            <h3>Sécurité & pentest (débutant)</h3>
+                            <span class="skill-sub">Labs, CTFs et audits rapides</span>
+                        </header>
+                        <p>Exploration de vulnérabilités côté application et infrastructure légère — apprentissage actif
+                            via
+                            CTF, labs et petits audits encadrés.</p>
+                        <ul class="bullet-list">
+                            <li>Entraînement sur vulnérabilités web (OWASP Top 10).</li>
+                            <li>Montage de labs locaux, reconnaissance et fuzzing basique.</li>
+                            <li>Respect de l'éthique : tests uniquement sur environnements autorisés.</li>
+                        </ul>
+                        <div class="chip-row">
+                            <span>Burp / ZAP</span>
+                            <span>Docker labs</span>
+                            <span>CTF</span>
+                        </div>
+                        <div class="meter" data-progress="60"></div>
+                    </article>
+                    <article class="skill-card">
+                        <header>
+                            <h3>Transmission & coaching</h3>
+                            <span class="skill-sub">Facilitation créative</span>
+                        </header>
+                        <p>Ateliers, mentorat et programmes pour démocratiser l'accès au code, au son et à la sécurité.
+                        </p>
+                        <ul class="bullet-list">
+                            <li>Workshops live coding, sound design et initiation au pentest éthique.</li>
+                            <li>Mentoring pour profils atypiques et accompagnement produit.</li>
+                        </ul>
+                        <div class="chip-row">
+                            <span>Miro</span>
+                            <span>Observable</span>
+                            <span>Notion</span>
+                        </div>
+                        <div class="meter" data-progress="90"></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="expeditions" class="section section--contrast">
+            <div class="container">
+                <h2 class="section-title">Expéditions créatives</h2>
+                <p class="section-intro">Quelques projets où j'ai posé mes touches. Chaque aventure est un mélange de
+                    recherche, de prototypage et de narration sensible.</p>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-label">Plateforme immersive</span>
+                            <h3>Pulse Atlas</h3>
+                        </div>
+                        <p>Plateforme interactive qui synchronise musique et storytelling spatial pour un festival. Le
+                            public
+                            génère son propre parcours sonore.</p>
+                        <ul class="project-meta">
+                            <li>Rôle · Creative technologist & lead dev</li>
+                            <li>Impact · +42% d'engagement sur les contenus live</li>
+                        </ul>
+                        <div class="chip-row">
+                            <span>SvelteKit</span>
+                            <span>Supabase</span>
+                            <span>Three.js</span>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-label">Installation vivante</span>
+                            <h3>Echo Drift</h3>
+                        </div>
+                        <p>Installation biométrique où battements et respiration modulent un mur LED. Les visiteurs
+                            repartent
+                            avec une empreinte audio personnalisée.</p>
+                        <ul class="project-meta">
+                            <li>Rôle · Direction artistique & pipelines data</li>
+                            <li>Impact · 4 500 visiteurs en dix jours</li>
+                        </ul>
+                        <div class="chip-row">
+                            <span>TouchDesigner</span>
+                            <span>Python</span>
+                            <span>MQTT</span>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-label">Live / DJ set</span>
+                            <h3>Night Drift — live set & scenography</h3>
+                        </div>
+                        <p>Set hybride mêlant live processing, DJing et mapping lumière pensé pour clubs et salles
+                            expérimentales.</p>
+                        <ul class="project-meta">
+                            <li>Rôle · DJ & ingénieur son & lumière</li>
+                            <li>Impact · Résidences en clubs et collaborations avec labels indépendants</li>
+                        </ul>
+                        <div class="chip-row">
+                            <span>Ableton</span>
+                            <span>CDJ / Traktor</span>
+                            <span>DMX</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="parcours" class="section">
+            <div class="container">
+                <h2 class="section-title">Parcours</h2>
+                <p class="section-intro">Des collaborations longues, des explorations en solo, toujours guidées par
+                    l'envie de faire dialoguer technologie et sens. Ci‑dessous un historique fictionnel & crédible
+                    entre 2023 et 2025, aligné avec mes compétences.</p>
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>2025 — Studio Spectra · Ingénieur Son & Développeur Interactif</h3>
+                            <span class="timeline-meta">Paris</span>
+                            <p>Création d’expériences sonores immersives basées sur la spatialisation 3D et les lumières
+                                synchronisées. Développement d’interfaces interactives pour performances live.</p>
+                            <ul class="bullet-list">
+                                <li>Développement d’un système de contrôle lumière via WebSocket et DMX.</li>
+                                <li>Production sonore modulaire pour installations immersives.</li>
+                                <li>Collaboration avec des artistes audiovisuels internationaux.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>2024 — PulseLab · Creative Developer & Sound Designer</h3>
+                            <span class="timeline-meta">Lyon</span>
+                            <p>Développement de performances audio-visuelles interactives et outils pour VJ/DJ en temps
+                                réel.</p>
+                            <ul class="bullet-list">
+                                <li>Création d’un framework audio-visuel en TypeScript et TouchDesigner.</li>
+                                <li>Performances DJ hybrides avec contrôle des visuels via Ableton Live.</li>
+                                <li>Expérimentations avec capteurs biométriques pour installations réactives.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>2023 — Cybersonic · Développeur & Pentesteur Junior</h3>
+                            <span class="timeline-meta">Remote / Freelance</span>
+                            <p>Initiation au pentesting éthique et développement d’outils d’automatisation pour tests de
+                                sécurité. En parallèle, travail sur des projets open-source audio et visuels.</p>
+                            <ul class="bullet-list">
+                                <li>Participation à des CTF et labs (TryHackMe, HackTheBox).</li>
+                                <li>Création d’un dashboard interne pour visualiser logs et alertes réseau.</li>
+                                <li>Développement d’un visualiseur sonore en WebGL et Python.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="projets" class="section section--highlight">
+            <div class="container">
+                <h2 class="section-title">Projets personnels & Résidences</h2>
+                <p class="section-intro">Projets et résidences imaginés pour mettre en valeur l'hybridation entre tech,
+                    son, lumière et sécurité.</p>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-label">Résidence</span>
+                            <h3>Residency — Atelier Signal (2025)</h3>
+                        </div>
+                        <p>Résidence de deux mois axée sur la spatialisation sonore et le mapping réactif. Prototype
+                            final présenté sous forme d'installation interactive dans une galerie locale.</p>
+                        <ul class="project-meta">
+                            <li>Résultat · Installation présentée à 1K+ visiteurs</li>
+                            <li>Stack · Max/MSP, TouchDesigner, DMX</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-label">Projet perso</span>
+                            <h3>Nightwatch Labs (2024 — ongoing)</h3>
+                        </div>
+                        <p>Mini-lab personnel pour entraînement pentest : collections de VMs, scripts d'automatisation
+                            et dashboards de suivi d'apprentissage.</p>
+                        <ul class="project-meta">
+                            <li>Focus · OWASP Top 10, fuzzing, reconnaissance</li>
+                            <li>Tech · Docker, Burp, ZAP, Python</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-label">EP / Live</span>
+                            <h3>Echoes from the Grid (2023)</h3>
+                        </div>
+                        <p>EP hybride mêlant samples de terrain, synths modulaires et processing en temps réel,
+                            accompagné d'une série de 3 live sets où la lumière répondait aux variations sonores.</p>
+                        <ul class="project-meta">
+                            <li>Formats · EP + 3 lives (clubs & micro-festivals)</li>
+                            <li>Outils · Ableton, Eurorack, CDJ</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="section section--highlight">
+            <div class="container contact-grid">
+                <div class="contact-card">
+                    <h2 class="section-title">Contact</h2>
+                    <p class="section-intro">Envie de collaborer, de prototyper une idée folle, réserver un DJ set ou
+                        discuter d'un audit ? Je réponds rapidement.</p>
+                    <div class="contact-list">
+                        <a href="slo.fr@mailfence.com ">slo.fr@mailfence.com </a>
+                        <a href="https://discord.com/users/1428474325937422390" target="_blank" rel="noreferrer">Discord
+                            ·
+                            @slo</a>
+                        <a href="https://github.com/miro-fr" target="_blank" rel="noreferrer">GitHub · @miro-fr</a>
+                    </div>
+                    <p class="contact-note">Je travaille en français et en anglais, à distance ou sur place. Tests
+                        de sécurité uniquement sur environnements autorisés.</p>
+                </div>
+                <form class="contact-form" data-contact-form>
+                    <fieldset>
+                        <legend class="sr-only">Formulaire de contact</legend>
+                        <label for="name">Nom ou équipe</label>
+                        <input id="name" name="name" type="text" placeholder="Indique ton nom" required>
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="email@exemple.com" required>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5"
+                            placeholder="Parle-moi de ton projet ou de ton idée." required></textarea>
+                        <button type="submit" class="button primary">Envoyer</button>
+                        <p class="form-status" aria-live="polite" hidden></p>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span data-current-year></span> Slô. Merci d'être passé dans mon univers.</p>
+            <div class="footer-links">
+                <a href="#expertises">Explorer mes expertises</a>
+                <a href="#contact">Écrire à Slô</a>
+            </div>
+        </div>
+    </footer>
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="Revenir en haut">
+        <span aria-hidden="true">↑</span>
+    </button>
+    <script src="assets/js/script.js" defer></script>
+</body>
+
+</html>
