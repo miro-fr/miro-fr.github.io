@@ -156,16 +156,50 @@
             ctx.clearRect(0, 0, width, height);
 
             const gradient = ctx.createLinearGradient(0, 0, width, height);
-            gradient.addColorStop(0, 'rgba(124, 58, 237, 0.12)');
-            gradient.addColorStop(1, 'rgba(14, 165, 233, 0.1)');
+            gradient.addColorStop(0, 'rgba(124, 58, 237, 0.15)');
+            gradient.addColorStop(0.5, 'rgba(14, 165, 233, 0.12)');
+            gradient.addColorStop(1, 'rgba(244, 114, 182, 0.1)');
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, width, height);
 
-            particles.forEach(particle => {
+            particles.forEach((particle, index) => {
+                // Draw particle glow
+                const glowGradient = ctx.createRadialGradient(
+                    particle.x, particle.y, 0,
+                    particle.x, particle.y, particle.radius * 3
+                );
+                glowGradient.addColorStop(0, `rgba(148, 163, 255, ${particle.alpha * 0.8})`);
+                glowGradient.addColorStop(0.5, `rgba(125, 211, 252, ${particle.alpha * 0.3})`);
+                glowGradient.addColorStop(1, 'rgba(148, 163, 255, 0)');
+                
+                ctx.beginPath();
+                ctx.fillStyle = glowGradient;
+                ctx.arc(particle.x, particle.y, particle.radius * 3, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Draw particle core
                 ctx.beginPath();
                 ctx.fillStyle = `rgba(148, 163, 255, ${particle.alpha})`;
                 ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
                 ctx.fill();
+
+                // Connect nearby particles
+                particles.forEach((otherParticle, otherIndex) => {
+                    if (index !== otherIndex) {
+                        const dx = particle.x - otherParticle.x;
+                        const dy = particle.y - otherParticle.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 150) {
+                            ctx.beginPath();
+                            ctx.strokeStyle = `rgba(148, 163, 255, ${0.15 * (1 - distance / 150)})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.moveTo(particle.x, particle.y);
+                            ctx.lineTo(otherParticle.x, otherParticle.y);
+                            ctx.stroke();
+                        }
+                    }
+                });
 
                 particle.y -= particle.speed;
                 particle.x += particle.drift * 0.3;
@@ -186,4 +220,111 @@
             createParticles();
         });
     }
+
+    // Smooth reveal animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealElements = document.querySelectorAll('.skill-card, .project-card, .timeline-item, .detail-card');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 100);
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    revealElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        revealObserver.observe(el);
+    });
+
+    // Mouse parallax effect on hero
+    const heroVisual = document.querySelector('.hero-visual');
+    const heroCopy = document.querySelector('.hero-copy');
+    
+    if (heroVisual && heroCopy) {
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth - 0.5;
+            const mouseY = e.clientY / window.innerHeight - 0.5;
+            
+            heroVisual.style.transform = `translate(${mouseX * 20}px, ${mouseY * 20}px)`;
+            heroCopy.style.transform = `translate(${mouseX * -10}px, ${mouseY * -10}px)`;
+        });
+    }
+
+    // Add ripple effect to buttons
+    const buttons = document.querySelectorAll('.button');
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple-effect');
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => ripple.remove(), 600);
+        });
+    });
+
+    // Custom cursor effect
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    document.body.appendChild(cursor);
+
+    const cursorFollower = document.createElement('div');
+    cursorFollower.className = 'cursor-follower';
+    document.body.appendChild(cursorFollower);
+
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+    let followerX = 0, followerY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function animateCursor() {
+        cursorX += (mouseX - cursorX) * 0.3;
+        cursorY += (mouseY - cursorY) * 0.3;
+        
+        followerX += (mouseX - followerX) * 0.1;
+        followerY += (mouseY - followerY) * 0.1;
+
+        cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+        cursorFollower.style.transform = `translate(${followerX}px, ${followerY}px)`;
+
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Cursor interaction with interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .pill, .chip-row span, .skill-card, .project-card');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.classList.add('cursor-hover');
+            cursorFollower.classList.add('cursor-hover');
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('cursor-hover');
+            cursorFollower.classList.remove('cursor-hover');
+        });
+    });
 })();
